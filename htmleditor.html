@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>HTMLEditor</title>
+<link rel="stylesheet" type="text/css" href="./htmleditor.css">
+<style>
+#div_content{
+    border:1px solid lightgray;
+    padding:8px;
+    height:320px;
+    overflow-y:scroll;
+}
+</style>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="./htmleditor.js"></script>
+<script>
+var htmleditor;
+window.onload=function(){
+    var div_content=document.getElementById('div_content');
+    htmleditor=new HTMLEditor(div_content);
+};
+window.onkeydown=window.onkeyup=function(){
+    output();
+}
+function output(){
+    document.getElementById('pre_output').innerHTML=htmltextencode(
+        htmleditor.html()
+    );
+}
+</script>
+</head>
+<body>
+<p>
+<a href="
+    javascript:output();
+">Output</a>
+<div id="div_content"><h1>H1</h1>Some text on the root element.
+<h1>Head1</h1>
+<p>
+This is a sentence.
+<h2>Head2</h2>
+<p>
+This is anothor sentence.<br>
+<a href="">This is a link</a>
+</div>
+<pre id="pre_source" style="border:1px solid gray;white-space:pre-wrap;"></pre>
+<pre id="pre_output" style="border:1px solid gray;white-space:pre-wrap;"></pre>
+</body>
+</html>

@@ -1,0 +1,13 @@
+.htmleditor a{
+    pointer-events:none;
+    cursor:default;
+}
+input.htmleditorcursor{
+    width:1px;
+    margin-right:-1px;
+    outline:0px;
+    border:0px;
+    padding:0px;
+    background:none;
+    font-size:inherit;
+}
