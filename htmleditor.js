@@ -2,6 +2,7 @@
 function HTMLEditor(parentnode){
     var list_tags=[
         'A',
+        'DIV',
         'H1',
         'H2',
         'H3',
@@ -9,8 +10,15 @@ function HTMLEditor(parentnode){
         'H5',
         'H6',
         'P',
+        'SPAN',
+        'TABLE',
+        'THEAD',
+        'TBODY',
+        'TR',
+        'TH',
+        'TD',
     ];
-    parentnode.className='htmleditor';
+    parentnode.classList.add('htmleditor');
     var input=document.createElement('input');
     input.className='htmleditorcursor';
     var keepcursorvisible=function(){
