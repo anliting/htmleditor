@@ -20,9 +20,10 @@ var list_tags=[
 ]
 window.HTMLEditor=HTMLEditor
 function HTMLEditor(parentnode){
-    parentnode.contentEditable=true
+    this.parentnode=parentnode
+    this.parentnode.contentEditable=true
 }
 HTMLEditor.prototype.html=function(){
-    return parentnode.innerHTML
+    return this.parentnode.innerHTML
 }
 }()
